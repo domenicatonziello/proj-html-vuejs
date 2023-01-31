@@ -6,6 +6,8 @@ export default {
 
 
 <template>
+  <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+  <font-awesome-icon icon="fa-brands fa-facebook-f" />
   <header>
     <!-- header-top -->
     <!-- navbar -->
