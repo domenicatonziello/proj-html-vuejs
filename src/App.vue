@@ -1,8 +1,9 @@
 <script>
 import { menu } from './assets/data';
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 export default {
-  components: { AppHeader },
+  components: { AppHeader, AppMain },
   data() {
     return {
       menu
@@ -16,9 +17,9 @@ export default {
 <template>
   <app-header :informations="menu"></app-header>
 
-  <main>
+  <app-main>
     <!-- 7 section -->
-  </main>
+  </app-main>
 
   <footer>
     <!-- footer-top -->

@@ -32,7 +32,7 @@ export default {
             </div>
             <div class="menu col-6">
                 <ul class="d-flex justify-content-between ">
-                    <li v-for="info in informations"> <a href="#">{{ info }}</a> </li>
+                    <li v-for="info in informations"> <a href="#"> {{ info }} </a></li>
                 </ul>
             </div>
             <div class="shop col-3 text-end">
@@ -82,10 +82,6 @@ header {
 
         .shop button {
             background-image: linear-gradient(45deg, rgb(152, 225, 94), rgb(0, 217, 166));
-        }
-
-        .text-green {
-            color: rgb(0, 217, 166);
         }
     }
 }
