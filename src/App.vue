@@ -1,17 +1,20 @@
 <script>
+import { menu } from './assets/data';
+import AppHeader from './components/AppHeader.vue';
 export default {
+  components: { AppHeader },
+  data() {
+    return {
+      menu
+    }
+  }
 }
 </script>
 
 
 
 <template>
-  <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-  <font-awesome-icon icon="fa-brands fa-facebook-f" />
-  <header>
-    <!-- header-top -->
-    <!-- navbar -->
-  </header>
+  <app-header :informations="menu"></app-header>
 
   <main>
     <!-- 7 section -->
