@@ -36,7 +36,7 @@ export default {
                 </ul>
             </div>
             <div class="shop col-3 text-end">
-                <button-vue label="purchase"></button-vue>
+                <button-vue label="purchase" class="btn-green m-3"></button-vue>
                 <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="text-green" />
             </div>
         </div>
@@ -78,10 +78,6 @@ header {
                     text-transform: uppercase;
                 }
             }
-        }
-
-        .shop button {
-            background-image: linear-gradient(45deg, rgb(152, 225, 94), rgb(0, 217, 166));
         }
     }
 }
