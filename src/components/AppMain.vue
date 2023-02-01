@@ -1,13 +1,19 @@
 <script>
-// import { cards } from '../assets/data';
-import ButtonVue from '../components/generic/Button.vue';
+import { images } from '../assets/data';
+import ImageSquare from './generic/ImageSquare.vue';
+import ButtonVue from './generic/Button.vue';
 import InfoCard from './generic/InfoCard.vue';
 export default {
     name: 'AppMain',
+    data() {
+        return {
+            images
+        }
+    },
     props: {
         cards: Array,
     },
-    components: { ButtonVue, InfoCard },
+    components: { ButtonVue, InfoCard, ImageSquare },
 }
 </script>
 
@@ -88,9 +94,55 @@ export default {
         </div>
     </section>
     <!-- project -->
-    <section id="project"></section>
+    <section id="project" class="">
+        <!-- project-top -->
+        <div class="d-flex align-items-end">
+            <div class="col-left">
+                <div class="d-flex my-5">
+                    <div class="separator small"></div>
+                    <div class="separator large"></div>
+                </div>
+                <h2> Our recent web designs & some examples of past projects </h2>
+                <div class="d-flex my-5">
+                    <div class="separator small"></div>
+                    <div class="separator large"></div>
+                </div>
+            </div>
+            <div class="col-right">
+                <p class="my-5">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat porro rem illum blanditiis vero
+                    voluptates? Deserunt eaque, porro repellendus excepturi sapiente, velit itaque odio autem, ab
+                    provident
+                    eligendi praesentium voluptate.
+                </p>
+            </div>
+        </div>
+        <!-- project-center -->
+        <div class="square-container">
+            <image-square v-for="image in images" @key="image" :img="image"></image-square>
+        </div>
+        <!-- project-bottom -->
+        <div class="text-center my-5">
+            <button-vue label="read more" class="btn-green"></button-vue>
+        </div>
+    </section>
     <!-- testimonials -->
-    <section id="testimonials"></section>
+    <section id="testimonials">
+        <div class="overlay">
+            <!-- icon -->
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error a illum voluptates necessitatibus, ad aut
+                vel quo impedit, doloribus possimus optio delectus saepe non ducimus et tempora aspernatur laborum
+                reprehenderit.</p>
+            <!-- <figure>
+                <img class="img-fluid" src="../assets/images/businesswoman-analysing-document-P8WSNMC-1024x820.jpg"
+                    alt="business-woman">
+                <figcaption>
+                    <p>Lissa Dublin</p>
+                    <p>Client</p>
+                </figcaption>
+            </figure> -->
+        </div>
+    </section>
     <!-- blog -->
     <section id="blog"></section>
     <!-- userExperience -->
@@ -166,8 +218,9 @@ export default {
 
 // MISSIONS -------------------------------------------------------------
 #missions {
-    height: 600px;
+    min-height: 600px;
     background-color: rgb(249, 249, 249);
+    padding: 100px 0;
 
     .col-left {
         flex-basis: 50%;
@@ -237,6 +290,56 @@ export default {
         h2 {
             font-size: 45px;
         }
+    }
+}
+
+// PROJECT --------------------------------------------------------------
+#project {
+    min-height: 600px;
+    background-color: white;
+    padding: 100px 0px;
+
+    .col-left {
+        flex-basis: 40%;
+        padding: 10px;
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    .col-right {
+        flex-basis: 60%;
+        padding: 10px;
+    }
+
+    .square-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+    }
+}
+
+// TESTIMONIALS ---------------------------------------------------------
+#testimonials {
+    height: 700px;
+    background-image: url('../assets/images/four-businesspeople-in-a-boardroom-with-paperwork-PC4V8H4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000000B3;
+        color: white;
+        line-height: 700px;
+        vertical-align: middle;
     }
 }
 </style>
