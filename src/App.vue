@@ -1,12 +1,13 @@
 <script>
-import { menu } from './assets/data';
+import { menu, cards } from './assets/data';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 export default {
   components: { AppHeader, AppMain },
   data() {
     return {
-      menu
+      menu,
+      cards
     }
   }
 }
@@ -17,7 +18,7 @@ export default {
 <template>
   <app-header :informations="menu"></app-header>
 
-  <app-main>
+  <app-main :cards="cards">
     <!-- 7 section -->
   </app-main>
 

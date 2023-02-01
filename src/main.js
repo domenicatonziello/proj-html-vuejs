@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // importo font awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMagnifyingGlass, faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faGaugeSimple, faCloud, faMobileScreenButton, faStopwatch } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faMagnifyingGlass, faCloud, faFacebookF, faTwitter, faPinterest);
+library.add(faMagnifyingGlass, faGaugeSimple, faCloud, faMobileScreenButton, faStopwatch, faFacebookF, faTwitter, faPinterest);
 
 const app = createApp(App)
 
