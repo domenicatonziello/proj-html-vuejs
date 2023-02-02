@@ -1,5 +1,8 @@
 <script>
-import { images } from '../assets/data';
+import { images, blogElenc } from '../assets/data';
+import EmailForm from './generic/EmailForm.vue';
+import FormCard from './generic/FormCard.vue';
+import BlogCard from './generic/BlogCard.vue';
 import ImageSquare from './generic/ImageSquare.vue';
 import ButtonVue from './generic/Button.vue';
 import InfoCard from './generic/InfoCard.vue';
@@ -7,13 +10,14 @@ export default {
     name: 'AppMain',
     data() {
         return {
-            images
+            images,
+            blogElenc
         }
     },
     props: {
         cards: Array,
     },
-    components: { ButtonVue, InfoCard, ImageSquare },
+    components: { ButtonVue, InfoCard, ImageSquare, BlogCard, FormCard, EmailForm },
 }
 </script>
 
@@ -22,8 +26,8 @@ export default {
     <!-- experience -->
     <section id="experience" class="d-flex align-items-center">
         <div class="col-left">
-            <h4 class="text-green"> 17 years of experience </h4>
-            <h2> We Are a Web Design <span class="text-aqua"> Agency </span> </h2>
+            <h4 class="text-s"> 17 years of experience </h4>
+            <h2> We Are a Web Design <span class="text-p"> Agency </span> </h2>
             <div class="d-flex my-5">
                 <div class="separator small"></div>
                 <div class="separator large"></div>
@@ -33,7 +37,7 @@ export default {
                 blind texts. Separated they live in Brookmarksgrove right at the coast of the Semantics, a large
                 language ocean. Separated they lived in Bookmarksgrove.
             </p>
-            <button-vue label="Read More" class="btn-black my-3"></button-vue>
+            <button-vue label="Read More" background="black" class="my-3"></button-vue>
             <div class="d-flex justify-content-between align-items-center my-3">
                 <p class="h6 text-uppercase m-0">Facebook - Instagram - Youtube - Twitter </p>
                 <div class="pages d-flex">
@@ -50,14 +54,14 @@ export default {
     <section id="website-design" class="d-flex align-items-center">
         <div class="col-left">
             <h2>
-                We are here to make your <span class="text-aqua"> website</span> look more
-                <span class="text-aqua"> elegant </span> and stylish!
+                We are here to make your <span class="text-p"> website</span> look more
+                <span class="text-p"> elegant </span> and stylish!
             </h2>
             <div class="d-flex my-5">
                 <div class="separator small"></div>
                 <div class="separator large"></div>
             </div>
-            <button-vue label="view all" class="btn-green"></button-vue>
+            <button-vue label="view all" background="primary"></button-vue>
         </div>
         <div class="col-right">
             <info-card v-for="card in cards" :card="card"></info-card>
@@ -80,7 +84,7 @@ export default {
             </div>
         </div>
         <div class="col-right">
-            <h2> learn more about our <span class="text-aqua"> missions </span></h2>
+            <h2> learn more about our <span class="text-p"> missions </span></h2>
             <div class="d-flex my-5">
                 <div class="separator small"></div>
                 <div class="separator large"></div>
@@ -90,7 +94,7 @@ export default {
                 blind texts. Separated they live in Brookmarksgrove right at the coast of the Semantics, a large
                 language ocean. Separated they lived in Bookmarksgrove.
             </p>
-            <button-vue label="read more" class="btn-green my-2"></button-vue>
+            <button-vue label="read more" background="primary" class="my-2"></button-vue>
         </div>
     </section>
     <!-- project -->
@@ -123,37 +127,68 @@ export default {
         </div>
         <!-- project-bottom -->
         <div class="text-center my-5">
-            <button-vue label="read more" class="btn-green"></button-vue>
+            <button-vue label="read more" background="primary"></button-vue>
         </div>
     </section>
     <!-- testimonials -->
     <section id="testimonials">
         <div class="overlay">
-            <!-- icon -->
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error a illum voluptates necessitatibus, ad aut
-                vel quo impedit, doloribus possimus optio delectus saepe non ducimus et tempora aspernatur laborum
-                reprehenderit.</p>
-            <!-- <figure>
-                <img class="img-fluid" src="../assets/images/businesswoman-analysing-document-P8WSNMC-1024x820.jpg"
-                    alt="business-woman">
-                <figcaption>
-                    <p>Lissa Dublin</p>
-                    <p>Client</p>
-                </figcaption>
-            </figure> -->
+            <div class="w-50 text-center">
+                <font-awesome-icon icon="fa-solid fa-quote-left" />
+                <p class="mb-5">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error a illum voluptates necessitatibus,
+                    ad
+                    aut
+                    vel quo impedit, doloribus possimus optio delectus saepe non ducimus et tempora aspernatur laborum
+                    reprehenderit.
+                </p>
+                <figure>
+                    <img class="img-fluid" src="../assets/images/businesswoman-analysing-document-P8WSNMC-1024x820.jpg"
+                        alt="business-woman">
+                </figure>
+                <p class="text-p mb-1 text-uppercase">Lissa Dublin</p>
+                <p>Client</p>
+            </div>
         </div>
     </section>
     <!-- blog -->
-    <section id="blog"></section>
+    <section id="blog">
+        <h2 class="mb-4">Latest News & Our Blog</h2>
+        <div class="d-flex justify-content-center my-5">
+            <div class="separator small"></div>
+            <div class="separator large"></div>
+        </div>
+        <div class="card-container">
+            <!-- card -->
+            <blog-card v-for="blog in blogElenc" @key="blog.text" :blog="blog"></blog-card>
+        </div>
+        <button-vue label="view all post" background="black"></button-vue>
+    </section>
     <!-- userExperience -->
-    <section id="userExperience"></section>
+    <section id="user-experience">
+        <div class="d-flex justify-content-around">
+            <!-- form -->
+            <form-card color="black" question="Are You Ready?" text="Start a New Project">
+                <email-form color="gray"></email-form>
+            </form-card>
+            <!-- form -->
+            <form-card color="primary" question="What Are You Waiting For?" text="Let's Talk About Work">
+                <button-vue label="start now" background="black"></button-vue>
+            </form-card>
+        </div>
+        <div>
+            <!-- icone -->
+        </div>
+    </section>
 </template>
 
 <style scoped lang="scss">
+@use '../assets/scss/colors' as *;
+
 // Experience -----------------------------------------------------------
 #experience {
     height: 600px;
-    background-color: rgb(250, 250, 250);
+    background-color: $lightwhite;
     padding-left: 80px;
 
     h4 {
@@ -183,7 +218,7 @@ export default {
     }
 
     .pages {
-        background-color: rgb(61, 61, 61);
+        background-color: $lightgrey;
         padding: 10px;
         border-radius: 20px;
 
@@ -198,7 +233,7 @@ export default {
 #website-design {
     min-height: 400px;
     padding: 100px 0;
-    background-color: white;
+    background-color: $white;
 
     .col-left {
         flex-basis: 40%;
@@ -219,7 +254,7 @@ export default {
 // MISSIONS -------------------------------------------------------------
 #missions {
     min-height: 600px;
-    background-color: rgb(249, 249, 249);
+    background-color: $lightwhite;
     padding: 100px 0;
 
     .col-left {
@@ -245,7 +280,7 @@ export default {
                 bottom: 0;
                 left: 0;
                 border-radius: 0 30px 30px 0;
-                background-image: linear-gradient(45deg, rgba(153, 225, 94, 0.795), rgba(0, 217, 166, 0.795));
+                background-image: linear-gradient(45deg, $secondary-color-transparent, $primary-color-transparent);
             }
         }
 
@@ -257,7 +292,7 @@ export default {
             img {
                 width: 100%;
                 height: 50%;
-                box-shadow: 0px 10px 25px gray;
+                box-shadow: 0px 10px 25px $gray;
                 object-fit: cover;
             }
         }
@@ -296,7 +331,7 @@ export default {
 // PROJECT --------------------------------------------------------------
 #project {
     min-height: 600px;
-    background-color: white;
+    background-color: $white;
     padding: 100px 0px;
 
     .col-left {
@@ -304,7 +339,7 @@ export default {
         padding: 10px;
 
         h2 {
-            font-size: 40px;
+            font-size: 45px;
         }
     }
 
@@ -337,9 +372,50 @@ export default {
         right: 0;
         bottom: 0;
         background-color: #000000B3;
-        color: white;
-        line-height: 700px;
-        vertical-align: middle;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            font-size: 50px;
+            margin-bottom: 30px;
+            color: $primary-color;
+        }
+
+        figure {
+            width: 100px;
+            height: 100px;
+            margin: 40px auto;
+
+            img {
+                border: 3px solid $white;
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
+}
+
+// BLOG -----------------------------------------------------------------
+#blog {
+    min-height: 500px;
+    padding: 150px 10px;
+    text-align: center;
+
+    .card-container {
+        min-height: 450px;
+        display: flex;
+        gap: 30px;
+    }
+}
+
+// USER-EXPERIENCE ------------------------------------------------------
+#user-experience {
+    height: 400px;
+    background-color: $lightwhite;
+    padding: 0 10px;
 }
 </style>

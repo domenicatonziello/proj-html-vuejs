@@ -5,6 +5,7 @@ export default {
         img: String,
     },
     computed: {
+        // get image url
         imageUrl() {
             const url = new URL(`../../assets/images/${this.img}`, import.meta.url);
             return url.href;

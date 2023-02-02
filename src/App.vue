@@ -1,5 +1,5 @@
 <script>
-import { menu, cards, images } from './assets/data';
+import { menu, cards } from './assets/data';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 export default {
@@ -7,8 +7,7 @@ export default {
   data() {
     return {
       menu,
-      cards,
-      images
+      cards
     }
   }
 }

@@ -31,4 +31,24 @@ const images = [
     'aa9a4539-PQGJ7HU-1024x1024.jpg',
     'cody-davis-253928-unsplash-1024x1024.jpg'
 ]
-export { menu, cards, images };
+const blogElenc = [
+    {
+        img: 'serious-businesswoman-with-documents-talking-on-P9Q6LX6-1024.jpg',
+        date: 'May 24, 2018',
+        from: 'by Alex',
+        text: 'Marketing Ideas'
+    },
+    {
+        img: 'Businessman-at-the-desk-in-his-office-resting--1024x768.jpg',
+        date: 'May 24, 2018',
+        from: 'by Alex',
+        text: 'Rest During Working Hours'
+    },
+    {
+        img: 'simple-home-office-with-tree-PBXRXYB-large-1024x768.jpg',
+        date: 'May 24, 2018',
+        from: 'by Alex',
+        text: 'Develop Your Startup Idea'
+    }
+]
+export { menu, cards, images, blogElenc };
