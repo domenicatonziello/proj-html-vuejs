@@ -21,10 +21,7 @@ export default {
 
   <app-main :cards="cards"></app-main>
 
-  <app-footer>
-    <!-- footer-top -->
-    <!-- footer-bottom -->
-  </app-footer>
+  <app-footer></app-footer>
 </template>
 
 

@@ -88,6 +88,11 @@ export default {
     .contacts li {
         margin-bottom: 10px;
     }
+
+    .links a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .blackbar {

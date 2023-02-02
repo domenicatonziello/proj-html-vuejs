@@ -59,6 +59,8 @@ header {
 
             li {
                 a {
+                    text-decoration: none;
+                    color: black;
                     text-transform: uppercase;
                 }
             }

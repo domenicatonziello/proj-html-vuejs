@@ -71,7 +71,7 @@ export default {
             <button-vue label="view all" background="primary"></button-vue>
         </div>
         <div class="col-right">
-            <info-card v-for="card in cards" :card="card"></info-card>
+            <info-card v-for="card in cards" @key="card.title" :card="card"></info-card>
         </div>
     </section>
     <!-- missions -->
@@ -130,7 +130,7 @@ export default {
         </div>
         <!-- project-center -->
         <div class="square-container">
-            <image-square v-for="image in images" @key="image" :img="image"></image-square>
+            <image-square v-for="image in images" :img="image"></image-square>
         </div>
         <!-- project-bottom -->
         <div class="text-center my-5">
@@ -257,6 +257,10 @@ export default {
         flex-basis: 60%;
         display: flex;
         flex-wrap: wrap;
+
+        .infocard:hover {
+            background-image: linear-gradient(90deg, $secondary-color, $primary-color);
+        }
     }
 }
 
