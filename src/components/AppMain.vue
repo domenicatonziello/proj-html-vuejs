@@ -1,5 +1,5 @@
 <script>
-import { images, blogElenc } from '../assets/data';
+import { images, blogElenc, logos } from '../assets/data';
 import EmailForm from './generic/EmailForm.vue';
 import FormCard from './generic/FormCard.vue';
 import BlogCard from './generic/BlogCard.vue';
@@ -11,7 +11,14 @@ export default {
     data() {
         return {
             images,
-            blogElenc
+            blogElenc,
+            logos
+        }
+    },
+    methods: {
+        getUrl(image) {
+            const url = new URL(`../assets/images/${image}`, import.meta.url);
+            return url.href;
         }
     },
     props: {
@@ -176,8 +183,10 @@ export default {
                 <button-vue label="start now" background="black"></button-vue>
             </form-card>
         </div>
-        <div>
-            <!-- icone -->
+        <div class="d-flex justify-content-around align-items-center my-5">
+            <figure v-for="logo in logos" @key="logo">
+                <img :src="getUrl(logo)" :alt="logo">
+            </figure>
         </div>
     </section>
 </template>

@@ -51,4 +51,12 @@ const blogElenc = [
         text: 'Develop Your Startup Idea'
     }
 ]
-export { menu, cards, images, blogElenc };
+const logos = [
+    'client-1-2x.png',
+    'client-3-2x.png',
+    'client-4-2x.png',
+    'client-5-2x.png',
+    'client-7-2x.png',
+    'client-9-2x.png'
+]
+export { menu, cards, images, blogElenc, logos };
