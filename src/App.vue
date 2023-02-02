@@ -2,8 +2,9 @@
 import { menu, cards } from './assets/data';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 export default {
-  components: { AppHeader, AppMain },
+  components: { AppHeader, AppMain, AppFooter },
   data() {
     return {
       menu,
@@ -18,14 +19,12 @@ export default {
 <template>
   <app-header :informations="menu"></app-header>
 
-  <app-main :cards="cards">
-    <!-- 7 section -->
-  </app-main>
+  <app-main :cards="cards"></app-main>
 
-  <footer>
+  <app-footer>
     <!-- footer-top -->
     <!-- footer-bottom -->
-  </footer>
+  </app-footer>
 </template>
 
 

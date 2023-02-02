@@ -59,4 +59,17 @@ const logos = [
     'client-7-2x.png',
     'client-9-2x.png'
 ]
-export { menu, cards, images, blogElenc, logos };
+const links = [
+    'Career',
+    'News',
+    'Term Of Use',
+    'Privacy Pojects',
+    'About',
+    'Contact'
+]
+const contacts = [
+    'Patricia C. Amedee 4401 Waldeck Street Grapevine Nashville, TX 76051',
+    'info@yourdomain.com',
+    '+99 (0) 101 0000 888'
+]
+export { menu, cards, images, blogElenc, logos, links, contacts };

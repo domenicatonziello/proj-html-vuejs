@@ -1,11 +1,12 @@
 <script>
 import ButtonVue from './generic/Button.vue';
+import BlackBar from './BlackBar.vue';
 export default {
     name: 'AppHeader',
     props: {
         informations: Array,
     },
-    components: { ButtonVue }
+    components: { ButtonVue, BlackBar }
 }
 </script>
 
@@ -13,16 +14,7 @@ export default {
 <template>
     <header>
         <!-- header-top -->
-        <div class="header-top d-flex justify-content-between align-items-center px-5">
-            <div class="number">
-                <p class="m-0"> (001)88451234 88455438 </p>
-            </div>
-            <div class="social">
-                <font-awesome-icon icon="fa-brands fa-facebook-f" />
-                <font-awesome-icon icon="fa-brands fa-twitter" />
-                <font-awesome-icon icon="fa-brands fa-pinterest" />
-            </div>
-        </div>
+        <black-bar text="(001)88451234 88455438"></black-bar>
         <!-- navbar -->
         <div class="navbar px-5 d-flex justify-content-between align-items-center">
             <div id="logo" class="col-3">
@@ -36,8 +28,8 @@ export default {
                 </ul>
             </div>
             <div class="shop col-3 text-end">
-                <button-vue label="purchase" class="btn-green m-3"></button-vue>
-                <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="text-green" />
+                <button-vue label="purchase" background="primary" class="m-3"></button-vue>
+                <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="text-s" />
             </div>
         </div>
     </header>
@@ -48,15 +40,9 @@ header {
     height: 140px;
     background-color: white;
 
-    // header-top
-    .header-top {
+    // BLACKBAR
+    .blackbar {
         height: 40px;
-        color: white;
-        background-color: #3B3B3B;
-
-        .social>* {
-            margin-left: 20px;
-        }
     }
 
     // navbar
@@ -73,8 +59,6 @@ header {
 
             li {
                 a {
-                    text-decoration: none;
-                    color: black;
                     text-transform: uppercase;
                 }
             }
